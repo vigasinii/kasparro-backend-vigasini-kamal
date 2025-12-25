@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: kasparro_db
+    environment:
+      POSTGRES_USER: kasparro
+      POSTGRES_PASSWORD: kasparro_pass
+      POSTGRES_DB: kasparro_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kasparro"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kasparro_api
+    environment:
+      - DATABASE_URL=postgresql://kasparro:kasparro_pass@db:5432/kasparro_db
+      - COINPAPRIKA_API_KEY=${COINPAPRIKA_API_KEY}
+      - COINGECKO_API_KEY=${COINGECKO_API_KEY}
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    command: >
+      sh -c "
+        echo 'Waiting for database...' &&
+        sleep 5 &&
+        echo 'Running migrations...' &&
+        alembic upgrade head &&
+        echo 'Starting ETL service...' &&
+        python -m core.etl_runner &
+        echo 'Starting API service...' &&
+        uvicorn api.main:app --host 0.0.0.0 --port 8000
+      "
+
+volumes:
+  postgres_data:
