@@ -1,6 +1,6 @@
 # Kasparro Backend Assignment - Project Summary
 
-**Developer**: Vic  
+**Developer**: Vigasini 
 **Date**: December 25, 2024  
 **Assignment**: Backend & ETL Systems
 
