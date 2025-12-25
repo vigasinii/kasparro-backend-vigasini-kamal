@@ -2,7 +2,7 @@
 
 Production-grade ETL pipeline and API system for cryptocurrency data ingestion from multiple sources.
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 This system implements a robust ETL (Extract, Transform, Load) pipeline that:
 - Ingests data from 3 sources: CoinPaprika API, CoinGecko API, and CSV files
@@ -62,7 +62,7 @@ This system implements a robust ETL (Extract, Transform, Load) pipeline that:
           └────────────────────────┘
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Docker and Docker Compose
@@ -119,7 +119,7 @@ make stats      # View ETL statistics
 make data       # Fetch sample data
 ```
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 kasparro-backend-vic/
@@ -160,7 +160,7 @@ kasparro-backend-vic/
 └── README.md            # This file
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### GET /health
 Health check endpoint reporting system status.
@@ -263,7 +263,7 @@ Recent ETL run history.
 ### GET /metrics
 Prometheus-compatible metrics endpoint.
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ### Raw Tables
 - `raw_coinpaprika`: Raw CoinPaprika API data
