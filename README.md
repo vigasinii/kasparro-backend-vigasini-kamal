@@ -453,14 +453,3 @@ LOG_LEVEL=INFO
 - Reduce API calls
 - Improve efficiency
 
-## 🤝 Contributing
-
-This is a technical assignment submission. For questions or clarifications, please contact through the Kasparro Discord community.
-
-## 📝 License
-
-This project is part of a technical assessment for Kasparro.
-
----
-
-**Built with ❤️ by Vic** | [GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourprofile)
