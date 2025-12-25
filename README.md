@@ -74,8 +74,8 @@ This system implements a robust ETL (Extract, Transform, Load) pipeline that:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/kasparro-backend-vic.git
-cd kasparro-backend-vic
+git clone https://github.com/vigasinii/kasparro-backend-vigasini-kamal.git
+cd  kasparro-backend-vigasini-kamal
 ```
 
 2. **Configure environment variables**
