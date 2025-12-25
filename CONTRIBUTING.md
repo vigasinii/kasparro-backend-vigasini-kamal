@@ -6,7 +6,7 @@ Thank you for your interest in contributing to the Kasparro ETL System!
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/kasparro-backend-vic.git
+   git clone https://github.com/vigasinii/kasparro-backend-vigasini-kamal.git
    cd kasparro-backend-vic
    ```
 
@@ -254,22 +254,5 @@ Fixes #456
    - Make requested changes
    - Push updates to same branch
 
-## Code Review Checklist
 
-- [ ] Code follows style guidelines
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] No console.log or print statements
-- [ ] Error handling implemented
-- [ ] Type hints added
-- [ ] Commit messages follow guidelines
 
-## Questions?
-
-- Join our Discord: [link]
-- Open an issue
-- Email: [email]
-
----
-
-**Happy coding!** 🚀
