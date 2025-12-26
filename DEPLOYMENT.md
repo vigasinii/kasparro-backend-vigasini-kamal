@@ -413,29 +413,7 @@ aws cloudwatch put-metric-alarm \
   --evaluation-periods 1
 ```
 
-## Cost Optimization
 
-1. **Use Fargate Spot**: 70% cost savings for non-critical workloads
-2. **Right-size RDS**: Start with db.t3.micro, scale as needed
-3. **Enable RDS Auto Scaling**: Scale storage automatically
-4. **Use CloudWatch Logs Insights**: Instead of exporting all logs
-5. **Implement S3 lifecycle policies**: For archived data
-
-## Security Best Practices
-
-1. **Use AWS Secrets Manager**: Never hardcode credentials
-2. **Enable VPC Flow Logs**: Monitor network traffic
-3. **Use AWS WAF**: Protect ALB from common attacks
-4. **Enable RDS encryption**: Encrypt data at rest
-5. **Implement least privilege IAM**: Only necessary permissions
-6. **Enable CloudTrail**: Audit all API calls
-
-## Disaster Recovery
-
-1. **RDS automated backups**: 7-day retention
-2. **Cross-region replication**: For critical data
-3. **ECS task auto-recovery**: Automatically restart failed tasks
-4. **Multi-AZ deployment**: High availability
 
 ## Estimated Monthly Cost
 
@@ -446,27 +424,4 @@ aws cloudwatch put-metric-alarm \
 - **CloudWatch Logs**: ~$5
 - **Total**: ~$90/month
 
-## Cleanup
 
-To tear down all resources:
-
-```bash
-# Delete ECS service
-aws ecs delete-service --cluster kasparro-cluster --service kasparro-service --force
-
-# Delete ECS cluster
-aws ecs delete-cluster --cluster kasparro-cluster
-
-# Delete RDS instance
-aws rds delete-db-instance --db-instance-identifier kasparro-db --skip-final-snapshot
-
-# Delete ALB and target group
-aws elbv2 delete-load-balancer --load-balancer-arn <alb-arn>
-aws elbv2 delete-target-group --target-group-arn <tg-arn>
-
-# Delete security groups, subnets, VPC, etc.
-```
-
----
-
-**Note**: Replace all `<placeholders>` with actual values from your AWS account.
