@@ -278,7 +278,7 @@ Prometheus-compatible metrics endpoint.
 - `etl_run`: Complete history of ETL runs
 - `schema_drift`: Detected schema changes
 
-## 🔄 ETL Process
+##  ETL Process
 
 ### Incremental Ingestion
 - Each source maintains a checkpoint of last processed data
@@ -299,7 +299,7 @@ Prometheus-compatible metrics endpoint.
   - CoinPaprika: ~100ms delay
   - CoinGecko: ~1.5s delay (free tier)
 
-## 🧪 Testing
+##  Testing
 
 ### Run All Tests
 ```bash
@@ -316,7 +316,7 @@ make test
 ### Test Database
 Tests use a separate test database (`kasparro_test_db`) that is created and destroyed for each test.
 
-## 📊 Monitoring & Observability
+##  Monitoring & Observability
 
 ### Structured Logging
 All logs are in JSON format with:
@@ -336,7 +336,7 @@ Available at `/metrics`:
 - Alert on schema drift
 - Record checkpoint status
 
-## 🚢 Deployment
+## Deployment
 
 ### Local Development
 ```bash
@@ -375,81 +375,4 @@ COINPAPRIKA_API_KEY=prod_key_here
 COINGECKO_API_KEY=prod_key_here
 LOG_LEVEL=INFO
 ```
-
-## 🏆 Key Features Implemented
-
-### ✅ P0 - Foundation (Required)
-- [x] P0.1: Data ingestion from API + CSV
-- [x] P0.2: Backend API with /data and /health endpoints
-- [x] P0.3: Fully Dockerized system (make up/down/test)
-- [x] P0.4: Basic test suite
-
-### ✅ P1 - Growth Layer (Required)
-- [x] P1.1: Third data source (CoinGecko)
-- [x] P1.2: Checkpoint table + resume-on-failure
-- [x] P1.3: /stats endpoint with ETL summaries
-- [x] P1.4: Comprehensive test coverage
-- [x] P1.5: Clean architecture with separation of concerns
-
-### ✅ P2 - Differentiator Layer (Optional)
-- [x] P2.1: Schema drift detection
-- [x] P2.2: Failure injection + recovery testing
-- [x] P2.3: Rate limiting + exponential backoff
-- [x] P2.4: Observability (Prometheus metrics, structured logs)
-- [x] P2.6: /runs endpoint for run comparison
-
-## 🛠️ Technology Stack
-
-- **Language**: Python 3.11
-- **Web Framework**: FastAPI
-- **Database**: PostgreSQL 15
-- **ORM**: SQLAlchemy 2.0
-- **Migrations**: Alembic
-- **Validation**: Pydantic v2
-- **Testing**: Pytest
-- **Containerization**: Docker & Docker Compose
-- **Monitoring**: Prometheus + JSON logging
-- **Scheduling**: Python schedule library
-
-## 📈 Performance Characteristics
-
-- **API Latency**: < 100ms for most queries
-- **ETL Runtime**: ~2-3 minutes for all sources
-- **Data Freshness**: 6-hour update cycle
-- **Fault Tolerance**: Automatic retry with exponential backoff
-- **Scalability**: Batch processing + connection pooling
-
-## 🔐 Security
-
-- API keys stored in environment variables
-- No hardcoded credentials
-- Database connection pooling
-- SQL injection protection via ORM
-- Input validation with Pydantic
-
-## 📚 Design Decisions
-
-### Why FastAPI?
-- Built-in OpenAPI documentation
-- Async support for better performance
-- Type hints and validation
-- Modern, production-ready
-
-### Why PostgreSQL?
-- ACID compliance for data integrity
-- JSON support for raw data storage
-- Robust indexing for query performance
-- Battle-tested reliability
-
-### Why Separate Raw and Unified Tables?
-- Preserve original data for auditing
-- Enable schema evolution
-- Support multiple source formats
-- Facilitate debugging
-
-### Why Checkpoint-Based Incremental Loading?
-- Minimize redundant processing
-- Enable resume-on-failure
-- Reduce API calls
-- Improve efficiency
 
