@@ -1,3 +1,22 @@
+# Deployment Guide
+
+## ✅ Live Production Deployment
+
+**AWS URL:** http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com
+
+### Verification Links:
+- Health Check: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/health
+- API Data: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/data
+- Interactive Docs: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/docs
+
+### AWS Resources:
+- ECS Cluster: kasparro-cluster
+- RDS Database: kasparro-db.c8jy2ocao27x.us-east-1.rds.amazonaws.com
+- Load Balancer: kasparro-alb-337095253.us-east-1.elb.amazonaws.com
+- ECR Repository: 602644258400.dkr.ecr.us-east-1.amazonaws.com/kasparro-etl
+
+---
+
 # AWS Deployment Guide
 
 This guide walks through deploying the Kasparro ETL system to AWS.
