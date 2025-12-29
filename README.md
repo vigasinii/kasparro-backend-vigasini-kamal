@@ -2,6 +2,23 @@
 
 Production-grade ETL pipeline and API system for cryptocurrency data ingestion from multiple sources.
 
+## 🌐 Live AWS Deployment
+
+**Production URL:** http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com
+
+### Available Endpoints:
+- Health: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/health
+- Data: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/data
+- Stats: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/stats
+- Docs: http://kasparro-alb-337095253.us-east-1.elb.amazonaws.com/docs
+
+### AWS Infrastructure:
+- Platform: AWS ECS Fargate + RDS PostgreSQL
+- Region: us-east-1
+- Load Balancer: kasparro-alb-337095253.us-east-1.elb.amazonaws.com
+
+---
+
 ##  Architecture Overview
 
 This system implements a robust ETL (Extract, Transform, Load) pipeline that:
